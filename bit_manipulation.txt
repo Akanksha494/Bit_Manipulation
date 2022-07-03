@@ -28,4 +28,28 @@ vector<int> a;
      }
         return xor_arr;
     }
+
+//count set bits
+
+int countbits(int n)
+    {
+        int c=0;
+        while(n!=0)
+        {
+            n=n&(n-1);
+            c++;
+        }
+        return c;
+    }
+
+//Power of two
+   bool power2(int n){
+        if(n<=0)
+           return false;
+        if((n&(n-1))==0)
+            return true;
+        else 
+            return false;
+    }
+
     
