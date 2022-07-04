@@ -52,4 +52,54 @@ int countbits(int n)
             return false;
     }
 
+//power of four
+
+bool isPowerOfFour(int n) {
+     if(n<=0)
+        return false;
+      if(n==1)
+          return true;
+        return n%4==0 && isPowerOfFour(n/4);
+       
+    }
+
+//prime number of set bits
+
+ bool isprime(int s)
+    {
+        if(s<=1)
+        {
+            return false;
+        }
+        for(int i=2;i<=s/2;i++)
+        {
+            if(s%i==0)
+                return false;
+        }
+        return true;
+    }
+    int countbits(int n)
+    {
+        int c=0;
+        while(n!=0)
+        {
+            n=n&(n-1);
+            c++;
+        }
+        return c;
+    }
+    int countPrimeSetBits(int left, int right) {
+      int a=0;
+      for(int i=left; i<=right; i++)
+      {
+          int c = countbits(i);
+          if(isprime(c))
+          {
+              a++;
+          }
+        
+      }
+        return a;
+    }
+
     
